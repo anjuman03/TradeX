@@ -1,0 +1,91 @@
+import React from "react";
+import { Link } from "react-router";
+
+function Navbar() {
+  const token = localStorage.getItem("token");
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    window.location.href = "/";
+  };
+
+  return (
+    <div className="sticky-top">
+      <nav
+        className="navbar navbar-expand-xl sticky-top"
+        style={{ backgroundColor: "#e3f2fd" }}
+      >
+        <div className="container">
+          <Link className="navbar-brand" to="/">
+            <img
+              src="media/images/logoTradeX.png"
+              alt="logo"
+              style={{ width: "120px" }}
+            />
+          </Link>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+              {!token && (
+                <>
+                  <li className="nav-item mx-2">
+                    <Link className="nav-link" to="/signup">
+                      Signup
+                    </Link>
+                  </li>
+                  <li className="nav-item mx-2">
+                    <Link className="nav-link" to="/login">
+                      Login
+                    </Link>
+                  </li>
+                </>
+              )}
+              <li className="nav-item mx-2">
+                <Link className="nav-link" to="/about">
+                  About
+                </Link>
+              </li>
+              <li className="nav-item mx-2">
+                <Link className="nav-link" to="/products">
+                  Products
+                </Link>
+              </li>
+              <li className="nav-item mx-2">
+                <Link className="nav-link" to="/pricing">
+                  Pricing
+                </Link>
+              </li>
+              <li className="nav-item mx-2">
+                <Link className="nav-link" to="/support">
+                  Support
+                </Link>
+              </li>
+              {token && (
+                <li className="nav-item mx-2">
+                  <button
+                    className="btn btn-outline-primary"
+                    onClick={handleLogout}
+                  >
+                    Logout
+                  </button>
+                </li>
+              )}
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  );
+}
+
+export default Navbar;
