@@ -14,7 +14,15 @@ const { OrdersModel } = require("./models/OrdersModel");
 const PORT = process.env.PORT || 8000 ;
 const url = process.env.MONGO_URL;
 
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "https://main.d2vbgqlewv0j8c.amplifyapp.com",
+      "https://main.d20v3tb0f72to7.amplifyapp.com",
+    ],
+    credentials: true,
+  })
+);
 app.use(bodyParser.json());
 
 main().catch(err => console.log(err));
