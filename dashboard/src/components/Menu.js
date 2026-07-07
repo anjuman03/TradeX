@@ -16,7 +16,7 @@ const Menu = () => {
 
   const handleLogout = () => {
     localStorage.removeItem('token');
-    window.location.href = 'http://localhost:3000';
+    window.location.href = 'https://main.d2vbgqlewv0j8c.amplifyapp.com';
   };
 
   const menuClass="menu";

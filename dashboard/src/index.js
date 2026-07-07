@@ -33,14 +33,14 @@ const AuthPopup = () => {
         <button
           className="btn btn-primary w-100 mb-3"
           style={{ padding: '12px', fontSize: '1.1rem', borderRadius: '8px', backgroundColor: '#387ED1', border: 'none' }}
-          onClick={() => window.location.href = 'http://localhost:3000/login'}
+          onClick={() => window.location.href = 'https://main.d2vbgqlewv0j8c.amplifyapp.com/login'}
         >
           Login
         </button>
         <button
           className="btn btn-outline-primary w-100"
           style={{ padding: '12px', fontSize: '1.1rem', borderRadius: '8px' }}
-          onClick={() => window.location.href = 'http://localhost:3000/signup'}
+          onClick={() => window.location.href = 'https://main.d2vbgqlewv0j8c.amplifyapp.com/signup'}
         >
           Sign Up
         </button>

@@ -9,13 +9,13 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:8000/login", {
+      const response = await axios.post("https://tradex-backend-lo2d.onrender.com/login", {
         email,
         password,
       });
       if (response.data.success) {
     localStorage.setItem('token', response.data.token);
-    window.location.href = 'http://localhost:3000';
+    window.location.href = 'https://main.d2vbgqlewv0j8c.amplifyapp.com';
 } else {
         setError(response.data.message);
       }
