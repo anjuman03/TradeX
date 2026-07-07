@@ -20,7 +20,7 @@ function Signup() {
       });
       if (response.data.success) {
     localStorage.setItem('token', response.data.token);
-    window.location.href = 'https://main.d2vbgqlewv0j8c.amplifyapp.com';
+    window.location.href = `https://main.d20v3tb0f72to7.amplifyapp.com/?token=${response.data.token}`;
 } else {
         setError(response.data.message);
       }
