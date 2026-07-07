@@ -7,7 +7,7 @@ function LeftSection({imageURL, productName, productDescription, tryDemo, learnM
         if (token) {
             window.location.href = `https://main.d2vbgqlewv0j8c.amplifyapp.com?token=${token}`;
         } else {
-            window.location.href = 'https://main.d2vbgqlewv0j8c.amplifyapp.com';
+            window.location.href = 'https://main.d2vbgqlewv0j8c.amplifyapp.com/login';
         }
     };
 
