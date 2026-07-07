@@ -4,11 +4,9 @@ function LeftSection({imageURL, productName, productDescription, tryDemo, learnM
     
     const handleRedirect = () => {
         const token = localStorage.getItem('token');
-        if (token) {
-            window.location.href = `https://main.d20v3tb0f72to7.amplifyapp.com?token=${token}`;
-        } else {
-            window.location.href = 'https://main.d2vbgqlewv0j8c.amplifyapp.com/login';
-        }
+        window.location.href = token 
+        ? `https://main.d20v3tb0f72to7.amplifyapp.com/?token=${token}`
+        : `https://main.d20v3tb0f72to7.amplifyapp.com/`;
     };
 
     return ( 
